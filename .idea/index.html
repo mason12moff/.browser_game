@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spark Dodge: a starter browser game</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;700&display=swap">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+<main>
+  <h1>Spark Dodge?</h1>
+  <p class="lede">Collect the sparks, avoid the red blocks. Move with the arrow keys, by dragging your nuts accross the keyboard .</p>
+
+  <div class="stage">
+    <canvas id="c" width="480" height="320" aria-label="Spark Dodge game board"></canvas>
+    <div class="overlay" id="overlay">
+      <h2 id="title">Ready?</h2>
+      <p id="msg">Grab sparks. Don’t get hit.</p>
+      <button id="start">Start game</button>
+    </div>
+  </div>
+  <div class="bar"><span id="score">Score 0</span><span id="best">Best 0</span></div>
+
+  <h3>How the code maps to the lesson</h3>
+  <ol>
+    <li><b>Canvas:</b> <code>ctx</code> paints each frame.</li>
+    <li><b>Game loop:</b> <code>loop()</code> calls <code>update()</code> then <code>draw()</code> via <code>requestAnimationFrame</code>.</li>
+    <li><b>Input:</b> the <code>keys</code> object records held keys; pointer dragging sets a target.</li>
+    <li><b>State:</b> <code>player</code>, <code>sparks</code>, <code>blocks</code>, and <code>score</code> hold everything.</li>
+    <li><b>Collisions:</b> <code>hit(a, b)</code> is a rectangle overlap check.</li>
+    <li><b>Next steps:</b> add sound, sprites, levels, or a power-up.</li>
+  </ol>
+</main>
+
+<script src="../../game.js"></script>
+</body>
+</html>
